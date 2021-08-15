@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <body>
-<h3>Customers</h3>
+<h3>THEM SAN PHAM</h3>
 <form th:action="@{create}" th:object="${list}" method="post">
     <table class="table">
         <tbody>
@@ -11,10 +11,10 @@
             <td><input placeholder="nhập id" th:field="*{id}"></td>
             <td>Name:</td>
             <td><input placeholder="nhập name" th:field="*{name}"></td>
-            <td>Name:</td>
+            <td>price:</td>
             <td><input placeholder="nhập price" th:field="*{price}"></td>
         <tr>
-            <td>Class:</td>
+            <td>loai san pham:</td>
             <td colspan="2">
                 <select th:field="*{loaiSP}">
                     <option th:each="lp: ${loaisanPhams}" th:value="${lp.loaiSP}" th:text="${lp.loaiSP}">

@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <body>
-<h3>Customers</h3>
-<form action="/edit" th:object="${list}" method="post">
-    <table class="table">
+<h3>EDIT SAN PHAM</h3>
+<form  th:object="${list}" method="post" novalidate="novalidate">
+    <table class="table" id="list"> <!--chú ý cái id=list, không có là lỗi-->
         <tbody>
         <tr>
             <td>ID:</td>
             <td><input placeholder="nhập id" th:field="*{id}"></td>
             <td>Name:</td>
             <td><input placeholder="nhập name" th:field="*{name}"></td>
-            <td>Name:</td>
+            <td>price:</td>
             <td><input placeholder="nhập price" th:field="*{price}"></td>
         <tr>
-            <td>Class:</td>
+            <td>loai san pham:</td>
             <td colspan="2">
                 <select th:field="*{loaiSP}">
                     <option th:each="lp: ${loaisanPhams}" th:value="${lp.loaiSP}" th:text="${lp.loaiSP}">
@@ -26,7 +26,6 @@
         </tbody>
     </table>
     <button type="submit" class="btn btn-success">Edit</button>
-
 </form>
 </body>
 </html>
